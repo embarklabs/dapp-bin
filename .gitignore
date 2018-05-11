@@ -1,0 +1,5 @@
+TokenFactory/.embark/
+TokenFactory/node_modules/
+TokenFactory/dist/
+TokenFactory/config/production/password
+TokenFactory/config/livenet/password

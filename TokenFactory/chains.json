@@ -1,0 +1,11 @@
+{
+  "0x536e86032c977f117f81912453d32a65f2b6566fe57bd50a5f99d76202693b38": {
+    "contracts": {
+      "0xc89c2df57277b55d4f3627b32b95ad27a462622f572b12619dd444ed3b9c4f1a": {
+        "name": "Token",
+        "address": "0x957294B433Bf06D7C4BF0356579c674F22d05db9"
+      }
+    },
+    "name": "development"
+  }
+}
