@@ -3,3 +3,8 @@ TokenFactory/node_modules/
 TokenFactory/dist/
 TokenFactory/config/production/password
 TokenFactory/config/livenet/password
+embark_demo/.embark/
+embark_demo/node_modules/
+embark_demo/dist/
+embark_demo/config/production/password
+embark_demo/config/livenet/password
