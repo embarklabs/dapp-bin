@@ -1,1 +1,27 @@
-{}
+{
+  "0xf52c600b212710da434bc34b2381cffe1b5a82b3727ba32859edde3293a485f9": {
+    "contracts": {
+      "0xad446ab69d59170c6eb10bdb1abe2202517175d191c1d145e4d33675628b65d1": {
+        "name": "wallet",
+        "address": "0x8ad34E39B65DBeF15687662b27F496CBEb91824F"
+      },
+      "0xe89086d35ddec2b9ca4e0cea3ccdfca8cb6d314e1bee83f369c4b6a01a444f56": {
+        "name": "company",
+        "address": "0x7655fEE98D5A21562DE6c5FF18F842e8D7411D70"
+      },
+      "0x8d11490480456464a7608c8f850f4acc405a8da21d5b1bf8866377bf044df8b3": {
+        "name": "ballot",
+        "address": "0x7Fa1e9bd29066869751962054E78B5B3e6f4b6e4"
+      },
+      "0xfd58249aa2975b057716bd825eb9ef4810508bc452ac29ff48fe9e5131c9b213": {
+        "name": "company",
+        "address": "0x4B01b36fc0171b5c8294Acbf71452814886b65A9"
+      },
+      "0x7f472acc52d44628c1a51c2c8719f9e435c06211021edd0bd577ca6276a63ed5": {
+        "name": "wallet",
+        "address": "0x4C5B1d9eAA5571Cbed2342C3C4D595a720d8E7bB"
+      }
+    },
+    "name": "development"
+  }
+}
