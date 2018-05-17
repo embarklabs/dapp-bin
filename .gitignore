@@ -8,3 +8,8 @@ embark_demo/node_modules/
 embark_demo/dist/
 embark_demo/config/production/password
 embark_demo/config/livenet/password
+VyperCoin/.embark/
+VyperCoin/node_modules/
+VyperCoin/dist/
+VyperCoin/config/production/password
+VyperCoin/config/livenet/password
