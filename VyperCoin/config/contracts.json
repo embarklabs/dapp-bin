@@ -11,12 +11,22 @@
     ],
     "gas": "auto",
     "contracts": {
-      "ERC20": {
+      "ballot": {
         "args": [
-          "hello",
-          "MYT",
-          1000,
-          10000000000
+          ["0x426f62", "0x416c696365"]
+        ]
+      },
+      "company": {
+        "args": [
+          "$ballot",
+          "10000",
+          "1000000000000000"
+        ]
+      },
+      "wallet": {
+        "args": [
+          ["$ballot", "$company"],
+          "10000"
         ]
       }
     }
