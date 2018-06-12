@@ -1,6 +1,6 @@
 {
   "name": "dapp-bin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "proof of concept dapps for embark",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/embark-framework/dapp-bin/issues"
   },
-  "homepage": "https://github.com/embark-framework/dapp-bin#readme"
+  "homepage": "https://github.com/embark-framework/dapp-bin#readme",
+  "dependencies": {
+    "embark": "^3.0.9"
+  }
 }
