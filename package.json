@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test_embark_demo": "cd embark_demo && npm install && ./node_modules/embark/bin/embark test && cd ..",
-    "test_token_factory_1": "cd embark_demo && npm install && ./node_modules/embark/bin/embark test && cd ..",
-    "test_token_factory_2": "cd embark_demo && npm install && ./node_modules/embark/bin/embark test && cd .."
+    "test_token_factory_1": "cd TokenFactory && npm install && ./node_modules/embark/bin/embark test && cd ..",
+    "test_token_factory_2": "cd TokenFactory2 && npm install && ./node_modules/embark/bin/embark test && cd .."
   },
   "repository": {
     "type": "git",
