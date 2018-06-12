@@ -1,0 +1,21 @@
+{
+  "name": "dapp-bin",
+  "version": "1.0.0",
+  "description": "proof of concept dapps for embark",
+  "main": "index.js",
+  "scripts": {
+    "test_embark_demo": "cd embark_demo && npm install && ./node_modules/embark/bin/embark test && cd ..",
+    "test_token_factory_1": "cd embark_demo && npm install && ./node_modules/embark/bin/embark test && cd ..",
+    "test_token_factory_2": "cd embark_demo && npm install && ./node_modules/embark/bin/embark test && cd .."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/embark-framework/dapp-bin.git"
+  },
+  "author": "iuri.matias@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/embark-framework/dapp-bin/issues"
+  },
+  "homepage": "https://github.com/embark-framework/dapp-bin#readme"
+}

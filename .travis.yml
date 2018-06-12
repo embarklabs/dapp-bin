@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+    - "8"
+script:
+    _ npm run test_embark_demo
+    _ npm run test_token_factory_1
+    _ npm run test_token_factory_2
