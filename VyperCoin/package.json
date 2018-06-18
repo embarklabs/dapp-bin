@@ -9,6 +9,6 @@
   "license": "ISC",
   "homepage": "",
   "devDependencies": {
-    "embark": "git@github.com:embark-framework/embark.git"
+    "embark": "https://github.com/embark-framework/embark.git"
   }
 }

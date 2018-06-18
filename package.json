@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/embark-framework/dapp-bin#readme",
   "dependencies": {
-    "embark": "git@github.com:embark-framework/embark.git"
+    "embark": "https://github.com/embark-framework/embark.git"
   }
 }

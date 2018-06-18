@@ -11,6 +11,6 @@
   "devDependencies": {},
   "dependencies": {
     "jquery": "^3.3.1",
-    "embark": "git@github.com:embark-framework/embark.git"
+    "embark": "https://github.com/embark-framework/embark.git"
   }
 }
