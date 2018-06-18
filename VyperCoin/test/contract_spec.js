@@ -1,14 +1,14 @@
+//let SimpleStorage = require('Embark/contracts/SimpleStorage');
+//
+//config({
+//  contracts: {
+//    SimpleStorage: {
+//      args: [100]
+//    }
+//  }
+//});
+//
 //describe("SimpleStorage", function() {
-//  this.timeout(0);
-//  before(function(done) {
-//    this.timeout(0);
-//    var contractsConfig = {
-//      "SimpleStorage": {
-//        args: [100]
-//      }
-//    };
-//    EmbarkSpec.deployAll(contractsConfig, () => { done() });
-//  });
 //
 //  it("should set constructor value", async function() {
 //    let result = await SimpleStorage.methods.storedData().call();
