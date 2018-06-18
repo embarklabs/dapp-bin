@@ -10,6 +10,7 @@
   "homepage": "",
   "devDependencies": {},
   "dependencies": {
+    "embark": "git@github.com:embark-framework/embark.git",
     "embark-bamboo": "^1.0.0"
   }
 }
