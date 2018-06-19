@@ -23,3 +23,4 @@ TokenFactory2/config/production/password
 TokenFactory2/config/livenet/password
 TokenFactory2/chains.json
 node_modules/
+.idea
