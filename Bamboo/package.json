@@ -10,7 +10,7 @@
   "homepage": "",
   "devDependencies": {},
   "dependencies": {
-    "embark": "https://github.com/embark-framework/embark.git",
+    "embark": "^3.1.0",
     "embark-bamboo": "^1.0.0"
   }
 }
