@@ -8,8 +8,5 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "",
-  "devDependencies": {
-    "embark": "^3.1.0"
-  }
+  "homepage": ""
 }
