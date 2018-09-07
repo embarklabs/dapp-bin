@@ -4,9 +4,12 @@
   "description": "proof of concept dapps for embark",
   "main": "index.js",
   "scripts": {
-    "test_embark_demo": "cd embark_demo && npm install && ./node_modules/embark/bin/embark test && cd ..",
-    "test_token_factory_1": "cd TokenFactory && npm install && ./node_modules/embark/bin/embark test && cd ..",
-    "test_token_factory_2": "cd TokenFactory2 && npm install && ./node_modules/embark/bin/embark test && cd .."
+    "embark": "embark",
+    "test": "npm-run-all test:*",
+    "test:embark_demo": "cross-env DAPP=\"embark_demo\" npm run test_dapp",
+    "test:token_factory_1": "cross-env DAPP=\"TokenFactory\" npm run test_dapp",
+    "test:token_factory_2": "cross-env DAPP=\"TokenFactory2\" npm run test_dapp",
+    "test_dapp": "cross-env-shell \"cd $DAPP && npm install && npm test\""
   },
   "repository": {
     "type": "git",

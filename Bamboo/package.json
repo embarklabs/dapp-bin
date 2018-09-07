@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "test": "embark test"
+    "embark": "node ../node_modules/embark/bin/embark",
+    "test": "npm run embark test"
   },
   "author": "",
   "license": "ISC",
