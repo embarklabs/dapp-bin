@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/embark-framework/dapp-bin#readme",
   "dependencies": {
-    "embark": "embark-framework/embark#develop"
+    "embark": "embark-framework/embark#develop",
+    "npm-run-all": "^4.1.3"
   }
 }
