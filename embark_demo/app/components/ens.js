@@ -1,3 +1,4 @@
+/*global web3*/
 import EmbarkJS from 'Embark/EmbarkJS';
 import React from 'react';
 import { Alert, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
@@ -10,18 +11,62 @@ class ENS extends React.Component {
     super(props);
 
     this.state = {
-      valueResolve: 'ethereumfoundation.eth',
+      valueResolve: 'eth',
       responseResolve: null,
       isResolveError: false,
-      valueLookup: '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359',
+      valueLookup: '',
       responseLookup: null,
       isLookupError: false,
+      valueRegister: '',
+      addressRegister: '',
+      responseRegister: null,
+      isRegisterError: false,
       embarkLogs: []
-    }
+    };
+  }
+
+  componentDidMount() {
+    EmbarkJS.onReady(() => {
+      if (!web3.eth.defaultAccount) {
+        this.setState({
+          globalError: 'There is currently no default account. If Metamask is active, please sign in or deactivate it.'
+        });
+      }
+      this.setState({
+        addressRegister: web3.eth.defaultAccount,
+        valueLookup: web3.eth.defaultAccount
+      })
+    });
   }
 
   handleChange(stateName, e) {
     this.setState({ [stateName]: e.target.value });
+  }
+
+  checkEnter(e, func) {
+    if (e.key !== 'Enter') {
+      return;
+    }
+    e.preventDefault();
+    func.apply(this, [e]);
+  }
+
+  registerSubDomain(e) {
+    e.preventDefault();
+    const self = this;
+    const embarkLogs = this.state.embarkLogs;
+    embarkLogs.push(`EmbarkJS.Names.registerSubDomain('${this.state.valueRegister}', '${this.state.addressRegister}', console.log)`);
+    this.setState({
+      embarkLogs: embarkLogs
+    });
+
+    EmbarkJS.Names.registerSubDomain(this.state.valueRegister, this.state.addressRegister, (err, transaction) => {
+      const message = err ? err : `Successfully registered "${this.state.valueRegister}" with ${transaction.gasUsed} gas`;
+      self.setState({
+        responseRegister: message,
+        isRegisterError: !!err
+      });
+    });
   }
 
   resolveName(e) {
@@ -35,7 +80,7 @@ class ENS extends React.Component {
     EmbarkJS.Names.resolve(this.state.valueResolve, (err, result) => {
       if (err) {
         return this.setState({
-          responseResolve: err,
+          responseResolve: err.message || err,
           isResolveError: true
         });
       }
@@ -57,7 +102,7 @@ class ENS extends React.Component {
     EmbarkJS.Names.lookup(this.state.valueLookup, (err, result) => {
       if (err) {
         return this.setState({
-          responseLookup: err,
+          responseLookup: err.message || err,
           isLookupError: true
         });
       }
@@ -70,14 +115,9 @@ class ENS extends React.Component {
 
   render() {
     return (<React.Fragment>
-        {
-          !this.props.enabled ?
-            <React.Fragment>
-              <Alert bsStyle="warning">ENS provider might not be set</Alert>
-            </React.Fragment> : ''
-        }
+        {this.state.globalError && <Alert bsStyle="danger">{this.state.globalError}</Alert>}
         <h3>Resolve a name</h3>
-        <Form inline>
+        <Form inline onKeyDown={(e) => this.checkEnter(e, this.resolveName)}>
           <FormGroup>
             {this.state.responseResolve &&
             <Alert className="alert-result" bsStyle={this.state.isResolveError ? 'danger' : 'success'}>
@@ -92,7 +132,7 @@ class ENS extends React.Component {
         </Form>
 
         <h3>Lookup an address</h3>
-        <Form inline>
+        <Form inline onKeyDown={(e) => this.checkEnter(e, this.lookupAddress)}>
           <FormGroup>
             {this.state.responseLookup &&
             <Alert className="alert-result" bsStyle={this.state.isLookupError ? 'danger' : 'success'}>
@@ -103,6 +143,25 @@ class ENS extends React.Component {
               defaultValue={this.state.valueLookup}
               onChange={(e) => this.handleChange('valueLookup', e)}/>
             <Button bsStyle="primary" onClick={(e) => this.lookupAddress(e)}>Lookup address</Button>
+          </FormGroup>
+        </Form>
+
+        <h3>Register subdomain</h3>
+        <Form inline onKeyDown={(e) => this.checkEnter(e, this.registerSubDomain)}>
+          <FormGroup>
+            {this.state.responseRegister &&
+            <Alert className="alert-result" bsStyle={this.state.isRegisterError ? 'danger' : 'success'}>
+              <span className="value">{this.state.responseRegister}</span>
+            </Alert>}
+            <FormControl
+              type="text"
+              defaultValue={this.state.valueRegister}
+              onChange={(e) => this.handleChange('valueRegister', e)}/>
+            <FormControl
+              type="text"
+              defaultValue={this.state.addressRegister}
+              onChange={(e) => this.handleChange('addressRegister', e)}/>
+            <Button bsStyle="primary" onClick={(e) => this.registerSubDomain(e)}>Register subdomain</Button>
           </FormGroup>
         </Form>
 
