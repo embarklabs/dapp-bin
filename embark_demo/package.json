@@ -5,7 +5,7 @@
   "main": "Gruntfile.js",
   "scripts": {
     "embark": "node ../node_modules/embark/bin/embark",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run embark test"
   },
   "author": "",
   "license": "ISC",
