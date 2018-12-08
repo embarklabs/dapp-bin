@@ -11,6 +11,6 @@
   "devDependencies": {},
   "dependencies": {
     "jquery": "^3.3.1",
-    "embark": "^3.1.0"
+    "embark": "^3.2.0"
   }
 }
