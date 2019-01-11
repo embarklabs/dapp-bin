@@ -17,13 +17,11 @@ $(document).ready(function() {
       });
   });
 
-  $("#useToken button").click(function() {
+  $('#useToken button').click(function() {
     var address = $('#useToken input').val();
     console.dir(Token.abi);
-    currentToken = new EmbarkJS.Contract({
-      abi: Token.options.jsonInterface,
-      address: address
-    });
+    console.log(Token._jsonInterface);
+    currentToken = new web3.eth.Contract(Token._jsonInterface, address);
   });
 
   web3.eth.getAccounts(function(err, accounts) {
